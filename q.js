@@ -104,7 +104,7 @@ var noop = function () {};
 // discourage promise changes that are not compatible with secure
 // usage.  If Object.freeze does not exist, fall back to doing nothing
 // (no op).
-var defend = Object.freeze || noop;
+var defend = /*Object.freeze ||*/ noop;
 if (typeof cajaVM !== "undefined") {
     defend = cajaVM.def;
 }
